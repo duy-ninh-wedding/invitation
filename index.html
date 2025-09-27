@@ -5927,12 +5927,24 @@
   </script>
 
   <script>
-    const form = document.getElementById('duy-ninh');
+    
     const submitDiv = document.getElementById('BUTTON2');
 
     let isSubmitting = false;
 
     submitDiv.addEventListener('click', function () {
+      const form = document.getElementById('duy-ninh');
+
+      const name = document.getElementById('name').value;
+      const message = document.getElementById('message').value;
+      const attendance = document.getElementById('attendance').value;
+      const withWhom = document.getElementById('withWhom').value;
+      const guestOf = document.getElementById('guestOf').value;
+      // Check validity
+      if (!name || !message || !attendance || !withWhom || !guestOf) {
+        alert("Vui lòng điền đầy đủ thông tin.");
+        return;
+      }
       if (isSubmitting) return; // prevent double submission
 
       isSubmitting = true;
@@ -5940,11 +5952,11 @@
       submitDiv.classList.add("disabled");
 
       const formData = new FormData();
-      formData.append("name", document.getElementById('name').value);
-      formData.append("message", document.getElementById('message').value);
-      formData.append("attendance", document.getElementById('attendance').value);
-      formData.append("withWhom", document.getElementById('withWhom').value);
-      formData.append("guestOf", document.getElementById('guestOf').value);
+      formData.append("name", name);
+      formData.append("message", message);
+      formData.append("attendance", attendance);
+      formData.append("withWhom", withWhom);
+      formData.append("guestOf", guestOf);
 
       fetch("https://script.google.com/macros/s/AKfycbyiE16SXZId-Gbx0mYAyL1TaDraEmA1XW9IdWRNI0cTxNa--c8gBysWitwLii1GigssMw/exec", {
         method: "POST",

@@ -2079,9 +2079,6 @@ LadiPageScriptV2.prototype.documentLoaded = function() {
     var e = document.getElementById("style_animation");
     if (isEmptyLadiPage(e) || e.parentElement.removeChild(e),
     LadiPageApp.review_callback_loaded(!0, t.documentLoaded)) {
-        t.const.LANG = JSON.stringify(t.const.LANG),
-        t.const.LANG = t.convertReplacePrefixStr(t.const.LANG),
-        t.const.LANG = JSON.parse(t.const.LANG);
         try {
             t.runtime.payment_setting = JSON.stringify(t.runtime.payment_setting),
             t.runtime.payment_setting = t.convertReplacePrefixStr(t.runtime.payment_setting),
@@ -9546,10 +9543,7 @@ LadiPageScriptV2.prototype.run = function(t, e) {
                 var e = function() {
                     if (i.runtime.ladipage_powered_by_classname = i.randomString(i.randomInt(6, 32)),
                     i.runtime.isClient) {
-                        i.runTimeout(function() {
-                            isEmptyLadiPage(t) || t.parentElement.removeChild(t),
-                            isEmptyLadiPage(a) || a.parentElement.removeChild(a)
-                        }, 1e4)
+
                     }
                 }
                   , a = !1
